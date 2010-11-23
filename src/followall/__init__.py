@@ -29,7 +29,7 @@ def followall(suggest_username, follow_username):
             try:
                 sys.stdout.write("following: {0}…".format(rec['user']['screen_name']))
                 sys.stdout.flush()
-                suggest.create_friendship(rec['user']['id'])
+                follow.create_friendship(rec['user']['id'])
                 suggest.hide_user_recommendation(rec['user']['id'])
             except TweepError as e:
                 if not e.reason.endswith("is already on your list."):
