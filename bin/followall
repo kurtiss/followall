@@ -1,0 +1,32 @@
+#!/usr/bin/env python
+# encoding: utf-8
+"""
+followall.py
+
+Created by Kurtiss Hare on 2010-11-23.
+Copyright (c) 2010 Medium Entertainment, Inc. All rights reserved.
+"""
+
+def main():
+    import optparse
+    import followall
+
+    usage = "usage: %prog <suggest_user> <follow_user>"
+    parser = optparse.OptionParser(usage = usage)
+    options, args = parser.parse_args()
+
+    try:
+        suggest_user = args[0]
+    except IndexError:
+        parser.error("Must specify suggest_user")
+        
+    try:
+        follow_user = args[1]
+    except IndexError:
+        parser.error("Must specify follow_user")
+
+    followall.followall(suggest_user, follow_user)
+
+
+if __name__ == '__main__':
+    main()

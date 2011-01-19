@@ -46,5 +46,6 @@ _build
 *.pid
 
 # project-specific overrides
+!bin/followall
 !bin/postactivate
 !bin/predeactivate
